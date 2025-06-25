@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require "test_suite_analyzer"
+
+command = ARGV.shift
+case command
+when "analyze"
+  runner = TestSuiteAnalyzer::Runner.new(ARGV)
+  runner.run
+else
+  puts "Usage: test_suite_analyzer analyze PATH [options]"
+end
